@@ -78,7 +78,6 @@ func (m *MiddlewareImpl) JWTMiddleware() gin.HandlerFunc {
 				"Invalid token",
 				errors.New("invalid token"),
 			))
-			c.JSON(http.StatusUnauthorized, gin.H{"error": "Invalid token"})
 			c.Abort()
 			return
 		}
