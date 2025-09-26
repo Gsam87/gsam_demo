@@ -1,0 +1,15 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: my-mysql-demo
+    environment:
+      MYSQL_ROOT_PASSWORD: root   # root 密碼
+      MYSQL_DATABASE: testdb           # 預設建立的 DB
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./mysql-init:/docker-entrypoint-initdb.d
+
+volumes:
+  db_data:
