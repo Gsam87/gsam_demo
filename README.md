@@ -61,7 +61,7 @@ Postman 可匯入檔案
 通常排成應交由環境管理，
 這邊提供相應程式請跑 `go run .\cronjob\get_weather.go`。
 
-ps. 這邊也會需要 DB Table ，理論上也包在 docker compose 初始好了， 可以檢查是否有 Weather table。
+ps. 這邊也會需要 DB Table ，理論上也包在 docker compose 初始好了， 可以檢查是否有 Weather table，這邊多紀錄欄位 `date` 來判斷該筆資料日期，保留後續可擴充性。
 
 然後可以打 `/weather` ，取得今日資料。分為兩隻 `/weather/auth` 需要驗證 auth token，這邊 token 為 API Login 給的，若沒有請先 `AddUser` 然後 `Login`。
 
